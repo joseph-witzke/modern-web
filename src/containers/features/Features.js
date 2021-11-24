@@ -1,4 +1,5 @@
 import React from 'react';
+import { Feature } from '../../components';
 
 import './features.styles.css';
 
@@ -25,11 +26,15 @@ const Features = () => (
   <div className='gpt3__features section__padding' id='features'>
     <div className='gpt3__features-heading'>
       <h1 className='gradient__text'>
-        The future is Now and You Just Need to Realize It.
+        The Future is Now and You Just Need to Realize It.
       </h1>
       <p>Request Early Access to Get Started</p>
     </div>
-    <div className='gpt3__features-container'>{}</div>
+    <div className='gpt3__features-container'>
+      {featuresData.map((item, idx) => (
+        <Feature title={item.title} text={item.text} key={item.title + idx} />
+      ))}
+    </div>
   </div>
 );
 
